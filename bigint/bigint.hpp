@@ -12,7 +12,14 @@ class bigint
 
 	public:
 	
-		bigint(unsigned int number = 0): big(std::to_string(number)) {};
+		bigint(unsigned int number = 0)
+		{
+			std::ostringstream out;
+
+			out << number;
+
+			big = out.str();
+		}
 		bigint(const bigint &other): big(other.big) {};
 
 		std::string getBig() const { return (big); };
