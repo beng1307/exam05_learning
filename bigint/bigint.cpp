@@ -6,8 +6,8 @@
 bigint	&bigint::operator+=(const bigint &other)
 {
 	int carry = 0;
-	size_t	i = big.size() - 1;
-	size_t	j = other.big.size() - 1;
+	int	i = big.size() - 1;
+	int	j = other.big.size() - 1;
 	
 	std::string result;
 	
