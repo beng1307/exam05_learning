@@ -21,7 +21,7 @@ bigint	&bigint::operator+=(const bigint &other)
 			sum += other.big[j--] - '0';
 		
 		carry = sum / 10;
-		result += (char)('0' + sum % 10);
+		result.push_back((sum % 10) + '0');
 	}
 	
 	std::reverse(result.begin(), result.end());

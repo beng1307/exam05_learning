@@ -15,7 +15,7 @@ static void	print_map(t_game game)
 {
 	for (int y = 0; y < game.height; y++)
 	{
-		for (int x = 0; x < game.height; x++)
+		for (int x = 0; x < game.width; x++)
 			putchar(game.map[y][x]);
 		putchar('\n');
 	}
@@ -40,7 +40,7 @@ static void	fill_map(t_game *game)
 			default: continue;
 		}
 
-		if (draw && x >= 0 && x < game->width && y >= 0 && y <= game->height)
+		if (draw && x >= 0 && x < game->width && y >= 0 && y < game->height)
 			game->map[y][x] = '0';
 	}
 }
@@ -87,10 +87,9 @@ static void	play_game(t_game *game)
 	for (int i = 0; i < game->height; i++)
 		new_map[i] = malloc(game->width * sizeof(char *));
 
-
 	for (int y = 0; y < game->height; y++)
 	{
-		for (int x = 0; x < game->height; x++)
+		for (int x = 0; x < game->width; x++)
 		{	
 			int neighbors = count_neighbors(game, y, x);
 			if (game->map[y][x] == '0')
