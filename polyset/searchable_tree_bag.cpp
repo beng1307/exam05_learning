@@ -8,6 +8,10 @@ searchable_tree_bag	&searchable_tree_bag::operator=(const searchable_tree_bag &o
 	return *this;
 }
 
+searchable_tree_bag::~searchable_tree_bag()
+{
+}
+
 bool	searchable_tree_bag::has(int value) const
 {
 	node *tmp = tree;

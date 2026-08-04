@@ -5,7 +5,11 @@ searchable_array_bag	&searchable_array_bag::operator=(const searchable_array_bag
 	if (this != &other)
 		array_bag::operator=(other);
 	
-	return this; 
+	return *this; 
+}
+
+searchable_array_bag::~searchable_array_bag()
+{
 }
 
 bool	searchable_array_bag::has(int value) const

@@ -1,18 +1,34 @@
 #include "set.hpp"
 
-bool	set::has(int value)
+set::set(const set &other): _bag(other._bag)
+{
+}
+
+set	&set::operator=(const set &other)
+{
+	(void)other;
+	return *this;
+}
+
+set::~set()
+{
+}
+
+bool	set::has(int value) const
 {
 	return (_bag.has(value));
 }
 
 void	set::insert(int value)
 {
-	_bag.insert(value);
+	if (!has(value))
+		_bag.insert(value);
 }
 
 void	set::insert(int *arr, int size)
 {
-	_bag.insert(arr, size);
+	for (int i = 0; i < size; i++)
+		insert(arr[i]);
 }
 
 void	set::print() const
